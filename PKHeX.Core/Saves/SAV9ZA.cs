@@ -166,7 +166,7 @@ public sealed class SAV9ZA : SaveFile, ISCBlockArray, ISaveFileRevision, IBoxDet
     public override int PlayedSeconds { get => Played.PlayedSeconds; set => Played.PlayedSeconds = value; }
 
     // Inventory
-    public override IReadOnlyList<InventoryPouch> Inventory { get => Items.Inventory; set => Items.Inventory = value; }
+    public override PlayerBag9a Inventory => new(this);
 
     // Storage
     private const int GapBoxSlot = 0x40;
@@ -261,17 +261,5 @@ public sealed class SAV9ZA : SaveFile, ISCBlockArray, ISaveFileRevision, IBoxDet
     {
         get => Blocks.GetBlockValue<uint>(SaveBlockAccessor9ZA.KTicketPointsZARoyaleInfinite);
         set => Blocks.SetBlockValue(SaveBlockAccessor9ZA.KTicketPointsZARoyaleInfinite, value);
-    }
-
-    public uint HyperspaceSurveyPoints
-    {
-        get => Blocks.GetBlockValue<uint>(SaveBlockAccessor9ZA.KHyperspaceSurveyPoints);
-        set => Blocks.SetBlockValue(SaveBlockAccessor9ZA.KHyperspaceSurveyPoints, value);
-    }
-
-    public string StreetName
-    {
-        get => GetString(Blocks.GetBlockSafe(SaveBlockAccessor9ZA.KStreetName).Data);
-        set => SetString(Blocks.GetBlockSafe(SaveBlockAccessor9ZA.KStreetName).Data, value, 18, StringConverterOption.ClearZero);
     }
 }

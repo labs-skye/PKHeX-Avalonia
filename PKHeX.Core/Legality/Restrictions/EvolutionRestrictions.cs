@@ -46,7 +46,7 @@ internal static class EvolutionRestrictions
     /// <summary>
     /// Checks if the evolution is the "rare" variant (less common).
     /// </summary>
-    /// <param name="encryptionConstant">Random value used to pivot between evolution results.</param>  
+    /// <param name="encryptionConstant">Random value used to pivot between evolution results.</param>
     public static bool IsEvolvedSpeciesFormRare(uint encryptionConstant) => encryptionConstant % 100 is 0;
 
     /// <summary>
@@ -171,14 +171,11 @@ internal static class EvolutionRestrictions
 
     private static bool WasMoveInRelearn(PKM pk, LegalInfo info, ushort move)
     {
-        for (var i = 0; i < info.Moves.Length; i++)
-        {
-            if (pk.GetMove(i) != move)
-                continue;
-            var method = info.Moves[i].Info.Method;
-            return method is { IsEggSource: true } or { IsRelearn: true } or LearnMethod.Encounter;
-        }
-        return false;
+        var i = pk.GetMoveIndex(move);
+        if (i == -1)
+            return false;
+        var method = info.Moves[i].Info.Method;
+        return method is { IsEggSource: true } or { IsRelearn: true } or LearnMethod.Encounter;
     }
 
     private static bool IsValidEvolutionWithMoveAny(IEncounterTemplate enc, ReadOnlySpan<ushort> any, EvolutionHistory history, PKM pk, ILearnGroup head)
