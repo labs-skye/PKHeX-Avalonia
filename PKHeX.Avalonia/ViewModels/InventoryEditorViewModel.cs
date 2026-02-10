@@ -13,7 +13,7 @@ public partial class InventoryEditorViewModel : ViewModelBase
     public InventoryEditorViewModel(SaveFile sav)
     {
         _sav = sav;
-        _originalPouches = sav.Inventory;
+        _originalPouches = sav.Inventory.Pouches;
 
         // Build item name list
         var itemStrings = GameInfo.Strings.GetItemStrings(sav.Context, sav.Version);
@@ -68,7 +68,6 @@ public partial class InventoryEditorViewModel : ViewModelBase
         {
             pouch.ApplyChanges();
         }
-        _sav.Inventory = _originalPouches;
     }
 
     [RelayCommand]
@@ -118,7 +117,7 @@ public partial class InventoryPouchViewModel : ViewModelBase
         MaxCount = pouch.MaxCount;
 
         // Build item list for combo box
-        var validItems = pouch.Info.GetItems(pouch.Type).ToArray();
+        var validItems = pouch.GetAllItems().ToArray();
         ItemList = validItems
             .Where(id => id < itemNames.Length)
             .Select(id => new ComboItem(itemNames[id], id))
@@ -135,7 +134,7 @@ public partial class InventoryPouchViewModel : ViewModelBase
     public void RefreshLanguage()
     {
         // Rebuild item list for combo box
-        var validItems = _pouch.Info.GetItems(_pouch.Type).ToArray();
+        var validItems = _pouch.GetAllItems().ToArray();
         ItemList = validItems
             .Where(id => id < _itemNames.Length)
             .Select(id => new ComboItem(_itemNames[id], id))
@@ -193,7 +192,7 @@ public partial class InventoryPouchViewModel : ViewModelBase
 
     public void GiveAllItems()
     {
-        var validItems = _pouch.Info.GetItems(_pouch.Type);
+        var validItems = _pouch.GetAllItems();
         int slot = 0;
         foreach (var itemId in validItems)
         {
