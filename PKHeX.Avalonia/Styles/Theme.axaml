@@ -133,6 +133,12 @@
         <Setter Property="FocusAdorner" Value="{x:Null}" />
     </Style>
 
+    <!-- Global Focus State - Enforce Red for keyboard navigation -->
+    <Style Selector="Button:focus-visible">
+        <Setter Property="BorderBrush" Value="{StaticResource ThemeAccentPrimaryBrush}" />
+        <Setter Property="BorderThickness" Value="2" />
+    </Style>
+
     <!-- ─────────────────────────────────────────────────────────────────────────
          Slot Button - Box slot with hover effects
          ───────────────────────────────────────────────────────────────────────── -->

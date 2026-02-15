@@ -567,12 +567,12 @@
                                 <StackPanel>
                                     <TextBlock Text="Markings" FontWeight="Bold" Margin="0,0,0,8" Opacity="0.6" />
                                     <UniformGrid Columns="6">
-                                        <CheckBox Content="●" IsChecked="{Binding MarkingCircle}" ToolTip.Tip="Circle" FontSize="16" HorizontalAlignment="Center" />
-                                        <CheckBox Content="▲" IsChecked="{Binding MarkingTriangle}" ToolTip.Tip="Triangle" FontSize="16" HorizontalAlignment="Center" />
-                                        <CheckBox Content="■" IsChecked="{Binding MarkingSquare}" ToolTip.Tip="Square" FontSize="16" HorizontalAlignment="Center" />
-                                        <CheckBox Content="♥" IsChecked="{Binding MarkingHeart}" ToolTip.Tip="Heart" FontSize="16" HorizontalAlignment="Center" />
-                                        <CheckBox Content="★" IsChecked="{Binding MarkingStar}" ToolTip.Tip="Star" FontSize="16" IsVisible="{Binding HasSixMarkings}" HorizontalAlignment="Center" />
-                                        <CheckBox Content="◆" IsChecked="{Binding MarkingDiamond}" ToolTip.Tip="Diamond" FontSize="16" IsVisible="{Binding HasSixMarkings}" HorizontalAlignment="Center" />
+                                        <CheckBox Content="●" IsChecked="{Binding MarkingCircle}" ToolTip.Tip="Circle" AutomationProperties.Name="Circle" FontSize="16" HorizontalAlignment="Center" />
+                                        <CheckBox Content="▲" IsChecked="{Binding MarkingTriangle}" ToolTip.Tip="Triangle" AutomationProperties.Name="Triangle" FontSize="16" HorizontalAlignment="Center" />
+                                        <CheckBox Content="■" IsChecked="{Binding MarkingSquare}" ToolTip.Tip="Square" AutomationProperties.Name="Square" FontSize="16" HorizontalAlignment="Center" />
+                                        <CheckBox Content="♥" IsChecked="{Binding MarkingHeart}" ToolTip.Tip="Heart" AutomationProperties.Name="Heart" FontSize="16" HorizontalAlignment="Center" />
+                                        <CheckBox Content="★" IsChecked="{Binding MarkingStar}" ToolTip.Tip="Star" AutomationProperties.Name="Star" FontSize="16" IsVisible="{Binding HasSixMarkings}" HorizontalAlignment="Center" />
+                                        <CheckBox Content="◆" IsChecked="{Binding MarkingDiamond}" ToolTip.Tip="Diamond" AutomationProperties.Name="Diamond" FontSize="16" IsVisible="{Binding HasSixMarkings}" HorizontalAlignment="Center" />
                                     </UniformGrid>
                                 </StackPanel>
                             </Border>

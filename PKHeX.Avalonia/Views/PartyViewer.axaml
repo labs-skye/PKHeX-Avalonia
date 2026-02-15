@@ -38,6 +38,7 @@
                                     DragDrop.AllowDrop="True"
                                     DragDrop.Drop="OnSlotDrop"
                                     ToolTip.Tip="{Binding ToolTipSummary}"
+                                    AutomationProperties.Name="{Binding ToolTipSummary}"
                                     Click="OnSlotClicked" 
                                     DoubleTapped="OnSlotDoubleTapped"
                                     Tag="{Binding}"
