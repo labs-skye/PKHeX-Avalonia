@@ -160,11 +160,13 @@
                                     <Grid Grid.Row="1" Grid.Column="0" ColumnDefinitions="*,8,*">
                                         <StackPanel Grid.Column="0">
                                             <TextBlock Text="Level" FontWeight="SemiBold" Margin="0,0,0,4" />
-                                            <NumericUpDown Value="{Binding Level}" Minimum="1" Maximum="100" FormatString="0" ShowButtonSpinner="False" />
+                                            <NumericUpDown Value="{Binding Level}" Minimum="1" Maximum="100" FormatString="0" ShowButtonSpinner="False"
+                                                           AutomationProperties.Name="Level" />
                                         </StackPanel>
                                         <StackPanel Grid.Column="2">
                                             <TextBlock Text="EXP" FontWeight="SemiBold" Margin="0,0,0,4" />
-                                            <NumericUpDown Value="{Binding Exp}" Minimum="0" Maximum="10000000" FormatString="0" ShowButtonSpinner="False" />
+                                            <NumericUpDown Value="{Binding Exp}" Minimum="0" Maximum="10000000" FormatString="0" ShowButtonSpinner="False"
+                                                           AutomationProperties.Name="Experience Points" />
                                         </StackPanel>
                                     </Grid>
 
@@ -251,43 +253,43 @@
                                 <!-- HP -->
                                 <TextBlock Grid.Row="2" Grid.Column="0" Text="HP" FontWeight="SemiBold" VerticalAlignment="Center" />
                                 <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Base_HP}" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.7" />
-                                <NumericUpDown Grid.Row="2" Grid.Column="2" Value="{Binding IvHP}" Minimum="0" Maximum="31" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" />
-                                <NumericUpDown Grid.Row="2" Grid.Column="3" Value="{Binding EvHP}" Minimum="0" Maximum="252" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" />
+                                <NumericUpDown Grid.Row="2" Grid.Column="2" Value="{Binding IvHP}" Minimum="0" Maximum="31" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" AutomationProperties.Name="HP IV" />
+                                <NumericUpDown Grid.Row="2" Grid.Column="3" Value="{Binding EvHP}" Minimum="0" Maximum="252" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" AutomationProperties.Name="HP EV" />
                                 <TextBlock Grid.Row="2" Grid.Column="4" Text="{Binding Stat_HP}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
                                 <!-- Atk -->
                                 <TextBlock Grid.Row="3" Grid.Column="0" Text="Atk" FontWeight="SemiBold" VerticalAlignment="Center" />
                                 <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Base_ATK}" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.7" />
-                                <NumericUpDown Grid.Row="3" Grid.Column="2" Value="{Binding IvATK}" Minimum="0" Maximum="31" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" />
-                                <NumericUpDown Grid.Row="3" Grid.Column="3" Value="{Binding EvATK}" Minimum="0" Maximum="252" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" />
+                                <NumericUpDown Grid.Row="3" Grid.Column="2" Value="{Binding IvATK}" Minimum="0" Maximum="31" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" AutomationProperties.Name="Attack IV" />
+                                <NumericUpDown Grid.Row="3" Grid.Column="3" Value="{Binding EvATK}" Minimum="0" Maximum="252" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" AutomationProperties.Name="Attack EV" />
                                 <TextBlock Grid.Row="3" Grid.Column="4" Text="{Binding Stat_ATK}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
                                 <!-- Def -->
                                 <TextBlock Grid.Row="4" Grid.Column="0" Text="Def" FontWeight="SemiBold" VerticalAlignment="Center" />
                                 <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Base_DEF}" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.7" />
-                                <NumericUpDown Grid.Row="4" Grid.Column="2" Value="{Binding IvDEF}" Minimum="0" Maximum="31" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" />
-                                <NumericUpDown Grid.Row="4" Grid.Column="3" Value="{Binding EvDEF}" Minimum="0" Maximum="252" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" />
+                                <NumericUpDown Grid.Row="4" Grid.Column="2" Value="{Binding IvDEF}" Minimum="0" Maximum="31" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" AutomationProperties.Name="Defense IV" />
+                                <NumericUpDown Grid.Row="4" Grid.Column="3" Value="{Binding EvDEF}" Minimum="0" Maximum="252" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" AutomationProperties.Name="Defense EV" />
                                 <TextBlock Grid.Row="4" Grid.Column="4" Text="{Binding Stat_DEF}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
                                 <!-- SpA -->
                                 <TextBlock Grid.Row="5" Grid.Column="0" Text="SpA" FontWeight="SemiBold" VerticalAlignment="Center" />
                                 <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Base_SPA}" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.7" />
-                                <NumericUpDown Grid.Row="5" Grid.Column="2" Value="{Binding IvSPA}" Minimum="0" Maximum="31" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" />
-                                <NumericUpDown Grid.Row="5" Grid.Column="3" Value="{Binding EvSPA}" Minimum="0" Maximum="252" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" />
+                                <NumericUpDown Grid.Row="5" Grid.Column="2" Value="{Binding IvSPA}" Minimum="0" Maximum="31" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" AutomationProperties.Name="Special Attack IV" />
+                                <NumericUpDown Grid.Row="5" Grid.Column="3" Value="{Binding EvSPA}" Minimum="0" Maximum="252" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" AutomationProperties.Name="Special Attack EV" />
                                 <TextBlock Grid.Row="5" Grid.Column="4" Text="{Binding Stat_SPA}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
                                 <!-- SpD -->
                                 <TextBlock Grid.Row="6" Grid.Column="0" Text="SpD" FontWeight="SemiBold" VerticalAlignment="Center" />
                                 <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Base_SPD}" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.7" />
-                                <NumericUpDown Grid.Row="6" Grid.Column="2" Value="{Binding IvSPD}" Minimum="0" Maximum="31" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" />
-                                <NumericUpDown Grid.Row="6" Grid.Column="3" Value="{Binding EvSPD}" Minimum="0" Maximum="252" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" />
+                                <NumericUpDown Grid.Row="6" Grid.Column="2" Value="{Binding IvSPD}" Minimum="0" Maximum="31" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" AutomationProperties.Name="Special Defense IV" />
+                                <NumericUpDown Grid.Row="6" Grid.Column="3" Value="{Binding EvSPD}" Minimum="0" Maximum="252" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" AutomationProperties.Name="Special Defense EV" />
                                 <TextBlock Grid.Row="6" Grid.Column="4" Text="{Binding Stat_SPD}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
                                 <!-- Spe -->
                                 <TextBlock Grid.Row="7" Grid.Column="0" Text="Spe" FontWeight="SemiBold" VerticalAlignment="Center" />
                                 <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding Base_SPE}" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.7" />
-                                <NumericUpDown Grid.Row="7" Grid.Column="2" Value="{Binding IvSPE}" Minimum="0" Maximum="31" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" />
-                                <NumericUpDown Grid.Row="7" Grid.Column="3" Value="{Binding EvSPE}" Minimum="0" Maximum="252" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" />
+                                <NumericUpDown Grid.Row="7" Grid.Column="2" Value="{Binding IvSPE}" Minimum="0" Maximum="31" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" AutomationProperties.Name="Speed IV" />
+                                <NumericUpDown Grid.Row="7" Grid.Column="3" Value="{Binding EvSPE}" Minimum="0" Maximum="252" FormatString="0" Classes="compact" HorizontalAlignment="Stretch" Margin="2" AutomationProperties.Name="Speed EV" />
                                 <TextBlock Grid.Row="7" Grid.Column="4" Text="{Binding Stat_SPE}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Grid>
                         </Border>
@@ -515,11 +517,13 @@
                                     <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" ColumnDefinitions="*,16,*" Margin="0,12,0,0">
                                         <StackPanel Grid.Column="0">
                                             <TextBlock Text="TID" FontWeight="SemiBold" Margin="0,0,0,4" />
-                                            <NumericUpDown Value="{Binding TrainerID}" Minimum="0" Maximum="4294967295" FormatString="0" ShowButtonSpinner="False" />
+                                            <NumericUpDown Value="{Binding TrainerID}" Minimum="0" Maximum="4294967295" FormatString="0" ShowButtonSpinner="False"
+                                                           AutomationProperties.Name="Trainer ID" />
                                         </StackPanel>
                                         <StackPanel Grid.Column="2">
                                             <TextBlock Text="SID" FontWeight="SemiBold" Margin="0,0,0,4" />
-                                            <NumericUpDown Value="{Binding Sid}" Minimum="0" Maximum="65535" FormatString="0" ShowButtonSpinner="False" />
+                                            <NumericUpDown Value="{Binding Sid}" Minimum="0" Maximum="65535" FormatString="0" ShowButtonSpinner="False"
+                                                           AutomationProperties.Name="Secret ID" />
                                         </StackPanel>
                                     </Grid>
                                 </Grid>
